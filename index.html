@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="Table(this)" value="Nhập meter">
+<input type="button" onclick="Table(this)" value="Nhập foot">
+<p id="result"></p>
+<script>
+    function metertoFoot(meter)
+    {
+        return  3.279*meter;
+    }
+    function foottoMeter(foot)
+    {
+        return 0.305*foot;
+    }
+    function Table(obj)
+    {
+        var num=parseInt(prompt('Nhập số'));
+        var table='<table>';
+        if(obj.value=='Nhập foot')
+        {
+            table+='<tr><td>foot</td><td>meter</td></td></tr>';
+            table+='<tr><td>'+num+'</td><td>'+foottoMeter(num)+'</td></td></tr>';
+        }
+        else
+            {
+                table+='<tr><td>meter</td><td>foot</td></td></tr>';
+                table+='<tr><td>'+num+'</td><td>'+metertoFoot(num)+'</td></td></tr>';
+            }
+        table+='</table>';
+        document.getElementById('result').innerHTML=table;
+    }
+</script>
+</body>
+</html>
